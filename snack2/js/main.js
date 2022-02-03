@@ -3,6 +3,7 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); 
 }
 
+//creaNuovoArray(numeroSquadre, elencoSquadre) ritorna un array con solo i nome e i falli subiti da ogni squadra
 function creaNuovoArray(numeroSquadre, elencoSquadre){
 
     const nuovoArray = [];
