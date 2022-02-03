@@ -15,7 +15,7 @@ for(let i=0; i<NUMERO_BICI; i++){
     };
 
 }
-console.log(myBici)
+console.log(myBici);
 
 
 //prelevo le info dal primo oggetto tramite il destructuring
