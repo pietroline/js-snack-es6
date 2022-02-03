@@ -12,7 +12,7 @@ for(let i=0; i<NUMERO_BICI; i++){
     myBici[i] = {
         "nome": `bici-${i+1}`,
         "peso": random(8,25)
-    }
+    };
 
 }
 console.log(myBici)
