@@ -49,5 +49,5 @@ console.log(myBici);
 
 
 const biciLeggera = trovaBiciLeggera(NUMERO_BICI, myBici);
-
-console.log(`La bici più leggera trovata è la ${biciLeggera[0]} con un peso di ${biciLeggera[1]} kg`);
+console.log(biciLeggera)
+console.log(`La bici più leggera trovata è la ${biciLeggera.nome} con un peso di ${biciLeggera.peso} kg`);
