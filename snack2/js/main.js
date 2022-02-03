@@ -9,7 +9,7 @@ function creaNuovoArray(numeroSquadre, elencoSquadre){
     const nuovoArray = [];
     for(let i=0; i<numeroSquadre; i++){
         let {nome, falli_subiti} = elencoSquadre[i];
-        nuovoArray[i] = [nome, falli_subiti];
+        nuovoArray[i] = {nome, falli_subiti};
     }
 
     return nuovoArray;
@@ -45,5 +45,5 @@ const nuovoArray = creaNuovoArray(NUMERO_SQUADRE, mySquadre);
 
 // eseguo la stampa di tutti i dati richiesti
 for(let i=0; i<nuovoArray.length; i++){
-    console.log(`${nuovoArray[i][0]} ha subìto ${nuovoArray[i][1]} falli`);
+    console.log(`${nuovoArray[i].nome} ha subìto ${nuovoArray[i].falli_subiti} falli`);
 }
