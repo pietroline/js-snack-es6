@@ -37,4 +37,4 @@ for(let i=1; i<NUMERO_BICI; i++){
 
 
 
-alert(`La bici più leggera trovata è la ${biciLeggera[0]} con un peso di ${biciLeggera[1]} kg`)
+alert(`La bici più leggera trovata è la ${biciLeggera[0]} con un peso di ${biciLeggera[1]} kg`);
