@@ -31,7 +31,7 @@ function trovaBiciLeggera(numeroBici, elencoBici){
             arrayBiciLeggere.push(altraBiciLeggera);
         }
     }
-    
+
     return arrayBiciLeggere;
 }
 
@@ -93,7 +93,7 @@ if(biciLeggera.length == 1){
     for(let i=0; i<biciLeggera.length; i++){
         piuBiciLeggere += `${biciLeggera[i].nome} `
     }
-    piuBiciLeggere += `sono le più leggere e hanno un peso di ${biciLeggera[0].peso} kg`
+    piuBiciLeggere += `sono le più leggere e hanno un peso di ${biciLeggera[0].peso} kg`;
 
     risultatoBiciLeggera.innerHTML = piuBiciLeggere;
 
