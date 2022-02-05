@@ -21,7 +21,18 @@ function trovaBiciLeggera(numeroBici, elencoBici){
         
     }
 
-    return biciLeggera;
+    //e se la bici più leggera ha il peso uguale ad altre??
+    const arrayBiciLeggere = [biciLeggera];
+    for(let i=0; i<numeroBici; i++){
+        if(biciLeggera.peso == elencoBici[i].peso && elencoBici[i].nome != biciLeggera.nome){
+            let altraBiciLeggera;
+            let {nome} = elencoBici[i];
+            altraBiciLeggera = {nome};
+            arrayBiciLeggere.push(altraBiciLeggera);
+        }
+    }
+    
+    return arrayBiciLeggere;
 }
 
 function stampaArray(bici){
@@ -70,4 +81,20 @@ const biciLeggera = trovaBiciLeggera(NUMERO_BICI, myBici);
 
 //append su DOM della bici più leggera
 const risultatoBiciLeggera = document.getElementById("bici_leggera");
-risultatoBiciLeggera.innerHTML = `La bici più leggera trovata è la ${biciLeggera.nome} con un peso di ${biciLeggera.peso} kg`;
+if(biciLeggera.length == 1){
+
+    //significa che esiste una solo bici più leggera e nessun altra bici ha lo stesso peso
+    risultatoBiciLeggera.innerHTML = `La bici più leggera trovata è la ${biciLeggera[0].nome} con un peso di ${biciLeggera[0].peso} kg`;
+
+}else if(biciLeggera.length > 1){
+
+    //esistono più bici che hanno lo stesso peso e contemporaneamente è il peso minore
+    let piuBiciLeggere = `Le biciclette `;
+    for(let i=0; i<biciLeggera.length; i++){
+        piuBiciLeggere += `${biciLeggera[i].nome} `
+    }
+    piuBiciLeggere += `sono le più leggere e hanno un peso di ${biciLeggera[0].peso} kg`
+
+    risultatoBiciLeggera.innerHTML = piuBiciLeggere;
+
+}
