@@ -24,6 +24,23 @@ function trovaBiciLeggera(numeroBici, elencoBici){
     return biciLeggera;
 }
 
+function stampaArray(bici){
+
+    let bicicletta = "";
+
+    for(let i=0; i<bici.length; i++){
+        bicicletta +=   `<tr>
+                            <td>${bici[i].nome}</td>
+                            <td>${bici[i].peso} kg</td>
+                        </tr>`;
+    }
+   
+    const elencoBici = document.getElementById("elenco_bici");
+    elencoBici.innerHTML += bicicletta;
+
+    return bicicletta;
+}
+
 const NUMERO_BICI = 10;
 
 
@@ -45,9 +62,12 @@ for(let i=0; i<NUMERO_BICI; i++){
     };
 
 }
-console.log(myBici);
 
+//append bici su DOM
+stampaArray(myBici);
 
 const biciLeggera = trovaBiciLeggera(NUMERO_BICI, myBici);
-console.log(biciLeggera)
-console.log(`La bici più leggera trovata è la ${biciLeggera.nome} con un peso di ${biciLeggera.peso} kg`);
+
+//append su DOM della bici più leggera
+const risultatoBiciLeggera = document.getElementById("bici_leggera");
+risultatoBiciLeggera.innerHTML = `La bici più leggera trovata è la ${biciLeggera.nome} con un peso di ${biciLeggera.peso} kg`;
