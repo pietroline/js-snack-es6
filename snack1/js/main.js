@@ -7,15 +7,16 @@ function trovaBiciLeggera(numeroBici, elencoBici){
     //prelevo le info dal primo oggetto tramite il destructuring
     let {nome, peso} = elencoBici[0];
 
-    //dichiaro un vettore che contiene le info precedentemente prelevate
-    let biciLeggera = [nome, peso];
+    //dichiaro una variabile oggetto che contiene le info precedentemente prelevate
+    let biciLeggera = {nome, peso};
 
     // scorro tutti gli elementi dell'array elencoBici in cerca di una bici più leggera
     //se la trovo riassegno la variabile biciLeggera con i dati della bici più leggera trovata
+    //parto da 1 perchè elencobici[0] è l'inizializzazione, vedi righe precedenti
     for(let i=1; i<numeroBici; i++){
 
         let {nome, peso} = elencoBici[i];
-        if(peso < biciLeggera[1]){
+        if(peso < biciLeggera.peso){
             biciLeggera = {nome, peso};
         }
         
@@ -78,7 +79,7 @@ for(let i=0; i<NUMERO_BICI; i++){
 stampaArray(myBici);
 
 const biciLeggera = trovaBiciLeggera(NUMERO_BICI, myBici);
-
+console.log(biciLeggera)
 //append su DOM della bici più leggera
 const risultatoBiciLeggera = document.getElementById("bici_leggera");
 if(biciLeggera.length == 1){
